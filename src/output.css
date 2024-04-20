@@ -809,6 +809,24 @@ video {
   background-color: rgb(153 27 27 / var(--tw-bg-opacity));
 }
 
-.sliceItemsOn:active{
-  color: aqua;
+.active {
+  text-decoration: line-through;
+  --tw-bg-opacity: 1;
+  color: rgb(134 239 172 / var(--tw-bg-opacity));
+}
+
+.sliceItems{
+  width: fit-content;
+  word-break: break-word;
+  padding-right: 10px;
+}
+
+@media (max-width: 640px) {
+  .wrapperForm{
+     width: 100%;
+  }
+
+  #todo{
+    width: 100%;
+  }
 }

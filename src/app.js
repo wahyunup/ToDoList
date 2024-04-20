@@ -35,8 +35,8 @@ function add(){
     let newText = document.getElementById('input');
     let newTodo = `
     <div id="removeItems${counter}" class="flex items-center justify-between">
-        <div>
-        <p id="sliceItemsOn${counter}" class="text-sm mr-10 active:bg-green-800">${newText.value}</p>
+        <div class="sliceItems w-2/3 break-words">
+        <p id="sliceItemsOn${counter}" class="text-sm mr-100">${newText.value}</p>
         </div>
         <div class="flex gap-2">
             <button id="toggle" onclick="sliceItems(${counter})" class="p-3 bg-slate-700 hover:bg-green-800 flex text-center items-center rounded-sm"><i class="fa-solid fa-check"></i></button>
@@ -58,10 +58,5 @@ function clearItems(self){
 //menambahkan fungsi coret
 function sliceItems(id){
     let itemToSlice = document.getElementById(`sliceItemsOn${id}`);
-    let toggle = document.getElementById('toggle')
-
-    toggle.onclick = function (){
-        toggle.classList.toggle('active')
-        itemToSlice.classList.toggle('active')
-    }
+    itemToSlice.classList.toggle('active')
 }
