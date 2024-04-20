@@ -808,3 +808,7 @@ video {
   --tw-bg-opacity: 1;
   background-color: rgb(153 27 27 / var(--tw-bg-opacity));
 }
+
+.sliceItemsOn:active{
+  color: aqua;
+}

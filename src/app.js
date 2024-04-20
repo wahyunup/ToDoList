@@ -34,11 +34,12 @@ let counter = 1;
 function add(){
     let newText = document.getElementById('input');
     let newTodo = `
-    <div id="removeItems${counter}" class="flex items-center justify-between break-all">
-
-        <p id="sliceItems${counter}" class="text-sm mr-10 ">${newText.value}</p>
+    <div id="removeItems${counter}" class="flex items-center justify-between">
+        <div>
+        <p id="sliceItemsOn${counter}" class="text-sm mr-10 active:bg-green-800">${newText.value}</p>
+        </div>
         <div class="flex gap-2">
-            <button onclick="sliceItems(${counter})" class="p-3 bg-slate-700 hover:bg-green-800 flex text-center items-center rounded-sm"><i class="fa-solid fa-check"></i></button>
+            <button id="toggle" onclick="sliceItems(${counter})" class="p-3 bg-slate-700 hover:bg-green-800 flex text-center items-center rounded-sm"><i class="fa-solid fa-check"></i></button>
             <button onclick="clearItems(${counter})" class="p-3 bg-slate-700 hover:bg-red-800 flex text-center items-center rounded-sm"><i class="fa-solid fa-trash"></i></button>
         </div>
     </div>`;
@@ -56,14 +57,11 @@ function clearItems(self){
 
 //menambahkan fungsi coret
 function sliceItems(id){
-    let itemToSlice = document.getElementById(`sliceItems${id}`);
-    
-    if (sliceItems = true){
-    itemToSlice.style.textDecoration = "line-through 1.2px";
-    itemToSlice.style.color = "rgb(134 239 172)";
-    } else if (sliceItems = add){
-    itemToSlice.style.textDecoration = "none";
-    itemToSlice.style.color = "#fff";
+    let itemToSlice = document.getElementById(`sliceItemsOn${id}`);
+    let toggle = document.getElementById('toggle')
+
+    toggle.onclick = function (){
+        toggle.classList.toggle('active')
+        itemToSlice.classList.toggle('active')
     }
-    
 }
